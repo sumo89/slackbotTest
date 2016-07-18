@@ -8,11 +8,9 @@ module.exports = function(robot){
 			var resultNameLocation = mapResult.results[0].name + mapResult.results[0].formatted_address;
 			//need to do a for loop, array .join()
 
-			// for (var i = 0; i < message.length, i ++){
-			// 	return msg.send("Here are some " + textEntry + ": " + resultName[i]);
-			// };
-
-			return msg.send(resultNameLocation);
+			for (var i = 0; i < resultNameLocation.length; i ++){
+				return msg.send("Here are some " + textEntry + ": " + resultNameLocation[i]);
+			};
 
 			// return msg.send(mapResult);
 				// for (var key in mapResult){
