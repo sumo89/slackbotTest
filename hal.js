@@ -12,7 +12,7 @@ module.exports = function(robot) {
   //   return msg.send(msg.random(halResponse2));
   // });
 
-  robot.respond(/open the (.*) please/i, function(res){
+  robot.hear(/open the (.*) please/i, function(res){
   	var thing =res.match[1];
 
   	if (thing === "door"){
