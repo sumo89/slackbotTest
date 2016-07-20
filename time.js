@@ -48,8 +48,9 @@ var request = require('request');
 module.exports = function(robot){
 	robot.hear(/what is the time/i, function(msg){
 		request('http://worldclockapi.com/api/json/utc/now', function (error, response, body){
-			var time = JSON.parse(body);
-			var message = time.currentDateTime;
+			var data = JSON.parse(body);
+			var time = new Date(data.currentDateTime);
+			var message = time.getHours() + ':' + time.getMinutes();
 			return msg.send("This is the time " + message);
 		});
 	});
